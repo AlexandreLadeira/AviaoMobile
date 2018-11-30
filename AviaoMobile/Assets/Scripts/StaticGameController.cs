@@ -7,8 +7,8 @@ public class StaticGameController : MonoBehaviour {
     public static int ultimoTiroAviao = 0, ultimoTiroInimigo = 0;
     public static int MaxInimigos = 10;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
     		
 	}
 	
@@ -79,8 +79,7 @@ public class StaticGameController : MonoBehaviour {
             ultimoTiroInimigo++;
             GameObject tiroDoInimigo = GameObject.Instantiate(prefabTiroInimigo) as GameObject;
             tiroDoInimigo.name = "tiroInimigo" + StaticGameController.ultimoTiroInimigo;
-            tiroDoInimigo.transform.position = new Vector3(inimigo.transform.position.x, inimigo.transform.position.y - 2, inimigo.transform.position.z);
-
+            tiroDoInimigo.transform.position = new Vector3(inimigo.transform.position.x, inimigo.transform.position.y - 1, inimigo.transform.position.z);
             tiroDoInimigo.SetActive(true);
             listaTiroInimigo.Add(tiroDoInimigo);
         }
@@ -97,7 +96,7 @@ public class StaticGameController : MonoBehaviour {
                 if (qualTiro.transform.position.y < -4.5f)
                 {
                     listaTiroInimigo[i].SetActive(false);
-                    qualTiro.SetActive(qualTiro);
+                    qualTiro.SetActive(false);
                     qualTiro.GetComponent<Renderer>().enabled = false;
                     listaTiroInimigo.RemoveAt(i);
                 }
@@ -142,7 +141,8 @@ public class StaticGameController : MonoBehaviour {
                 posicaoX = Random.Range(xMinimo, xMaximo);
                 inimigo.transform.position = new Vector3(posicaoX, 8f, 1f);
                 inimigo.SetActive(true);
-                inimigo.GetComponent<Renderer>().enabled = true;
+                listaInimigo[i].SetActive(true);
+                listaInimigo[i].GetComponent<Renderer>().enabled = true;
                 StaticGameController.listaInimigo[i] = inimigo;
                 break;
             }

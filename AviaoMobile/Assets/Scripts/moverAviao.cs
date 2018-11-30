@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class moverAviao : MonoBehaviour {
     public GameObject prefabTiroAviao;
     public float velocidadeTiroAviao = 4f;
-    public float taxaDeTiros = 0.05f;
+    public float intervaloTiros = 0.3f;
+    public float tempoUltimoTiro = 0;
     private float proximoTiro = 0.0f;
 
     public float taxaSpawnInimigos = 2;
@@ -122,16 +123,13 @@ public class moverAviao : MonoBehaviour {
                     if (transform.position.y < -3.9f)
                     transform.position = new Vector3(transform.position.x, -3.9f, transform.position.z);
             }
-
+            
             tratarSetasDeDirecao(gameObject);
             bool criarTiro = false;
-            if (Input.GetKey(KeyCode.Space))
-                criarTiro = true;
-
-            if (Input.GetButton("Fire1") && Time.time > proximoTiro)
+            if ((Input.GetKey(KeyCode.Space) || Input.GetButton("Fire1") ) && Time.time - tempoUltimoTiro >= intervaloTiros)
             {
                 criarTiro = true;
-                proximoTiro = Time.time + taxaDeTiros;
+                tempoUltimoTiro = Time.time;
             }
 
             if (criarTiro)

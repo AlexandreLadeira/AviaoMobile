@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class moverTiroInimigo : MonoBehaviour {
-    public float velocidadeTiroInimigo = -1;
+    public float velocidadeTiroInimigo = 1;
 
 	// Use this for initialization
 	void Start () {

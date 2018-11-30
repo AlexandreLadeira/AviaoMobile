@@ -281,7 +281,8 @@ MonoBehaviour:
   prefabTiroAviao: {fileID: 1501593842478788, guid: b68eb5079d3661b4fa02c8dcae00a438,
     type: 2}
   velocidadeTiroAviao: 4
-  taxaDeTiros: 0.05
+  intervaloTiros: 0.5
+  tempoUltimoTiro: 0
   taxaSpawnInimigos: 2
   xMaximo: 4
   xMinimo: -4
@@ -383,8 +384,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1907057215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 1.5}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: 0.12, y: 1.72, z: 1.5}
+  m_LocalScale: {x: 10.24916, y: 10.145941, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

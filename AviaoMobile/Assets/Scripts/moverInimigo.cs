@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class moverInimigo : MonoBehaviour {
-    public float velocidadeInimigo = -2.0f;
+    public float velocidadeInimigo = 2.0f;
     public GameObject prefabTiroInimigo;
     public AudioClip somDeExplosao;
     private bool colidindo = false;
@@ -23,8 +23,8 @@ public class moverInimigo : MonoBehaviour {
         if (gameObject.tag == "Inimigo")
         {
             transform.position += new Vector3(0, velocidadeInimigo * Time.deltaTime, 0);
-            if (Random.Range(1, 00) <= 1)
-                StaticGameController.criarTiro(gameObject, prefabTiroInimigo);
+            if (Random.Range(1, 100) <= 2)
+                StaticGameController.criarTiroInimigo(gameObject, prefabTiroInimigo);
 
             if (transform.position.y < -4.5f)
             {
